@@ -14,6 +14,8 @@ public class GuesserScript : MonoBehaviour {
 
         print("Welcome to Number Guesser");
 
+        //**********print("Press E for EZ mode, M for Medium mode, H for HARD mode");**********
+
         print("Pick a number between " + min + " and " + max);
 
         //Is the value GUESS
@@ -27,13 +29,35 @@ public class GuesserScript : MonoBehaviour {
     private void NextGuess()
     {
         count--;
-        guess = Random.Range(min, max);
-        //prior guess code: guess = (min + max) / 2;********
-        print("Is the number " + guess + "?");
+        //this ensures that it doesn't make a guess after var 'count' hits zero turns
+        if (count > 0)
+        {
+            guess = Random.Range(min, max);
+            //******prior guess code: guess = (min + max) / 2;********
+            print("Is the number " + guess + "?");
+        }
     }
 	
 	// Update is called once per frame
 	 void Update () {
+
+        //UNFINISHED SELECT MODE (EZ, ME, HA)
+         /*if (Input.GetKeyDown(KeyCode.E)){
+         print("I'm now restarting the game.");
+         max = 1000;
+         min = 1;
+         count = 6;
+         }
+         */
+
+        //count check (checks if it's zero, and if so, player wins
+        if (count == 0)
+        {
+            //(switching the value to -1 so it doesn't pop up with the message a milltion times)
+            count = -1;
+            print("... I guess you won...");
+        }
+
         //Up arrow
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -63,11 +87,5 @@ public class GuesserScript : MonoBehaviour {
             else
             print("i'm very smurt :O");
         }
-
-        //count check (checks if it's zero, and if so, player wins
-        if (count <= 0)
-            {
-            print("... I guess you won...");
-            }
     }
 }
