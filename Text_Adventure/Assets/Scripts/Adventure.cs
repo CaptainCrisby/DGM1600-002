@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Adventure : MonoBehaviour {
 
     public enum States { cell, window, gate, bed };
     public States currentState;
     //public Texture2D greenMan;
+    public Text textObject;
 
 
     // Use this for initialization
@@ -48,6 +50,12 @@ public class Adventure : MonoBehaviour {
             "There is a Gate. \n" +
             "There is a Bed. \n" +
             "Press W for Window, G for gate, B for bed.");
+        textObject.text = "Hello UVU number " + System.Environment.UserName + ". " +
+            "You are in a cell. It's gross and dark and stinky. \n" +
+            "There is a Window. \n" +
+            "There is a Gate. \n" +
+            "There is a Bed. \n" +
+            "Press W for Window, G for gate, B for bed.";
         if (Input.GetKeyDown(KeyCode.W)) { currentState = States.window; }
         if (Input.GetKeyDown(KeyCode.G)) { currentState = States.gate; }
         if (Input.GetKeyDown(KeyCode.B)) { currentState = States.bed; }
