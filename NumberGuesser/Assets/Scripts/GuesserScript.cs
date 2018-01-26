@@ -18,7 +18,10 @@ public class GuesserScript : MonoBehaviour {
         print("Welcome to Number Guesser" +
             "\nPress E for EZ mode, M for Medium mode, H for HARD mode" +
             "Press C for the count.");
-
+        if (max == 1001)
+        {
+            max = 1000;
+        }
         print("Pick a number between " + min + " and " + max);
         Count();
 
@@ -159,6 +162,8 @@ public class GuesserScript : MonoBehaviour {
                 print("I'm changing your answer to 777 because you are mean :(((");
                 print("Your number is now " + guess + ".");
                 print("punk.");
+                count = (countSave + 1);
+                StartCoroutine(Hold());
             }
             else
             print("i'm very smurt :O");
