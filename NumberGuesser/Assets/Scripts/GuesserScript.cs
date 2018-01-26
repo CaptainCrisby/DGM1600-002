@@ -8,24 +8,37 @@ public class GuesserScript : MonoBehaviour {
     public int min;
     private int guess;
     public int count;
+    private int countSave;
+    private int maxSave;
+    private int minSave;
 
     // Use this for initialization
     private void Start () {
 
-        print("Welcome to Number Guesser");
-
-        //**********print("Press E for EZ mode, M for Medium mode, H for HARD mode");**********
+        print("Welcome to Number Guesser" +
+            "\nPress E for EZ mode, M for Medium mode, H for HARD mode" +
+            "Press C for the count.");
 
         print("Pick a number between " + min + " and " + max);
+        Count();
 
         //Is the value GUESS
         NextGuess();
         //Instructions - Push these buttons
-        print("Up arrow for higher, down arrow for lower, enter for correct.");
+        print("Up arrow for higher, down arrow for lower, enter for correct, and R to restart.");
 
-        max = max + 1;
-	}
+        //When resetting, ensures that that max won't go above 1001
+        if (max < 1001)
+        {
+            max = max + 1;
+        }
+        countSave = count;
+        maxSave = max;
+        minSave = min;
+    }
 
+
+    //Guess the next number.
     private void NextGuess()
     {
         count--;
@@ -37,29 +50,92 @@ public class GuesserScript : MonoBehaviour {
             print("Is the number " + guess + "?");
         }
     }
-	
-	// Update is called once per frame
-	 void Update () {
 
-        //UNFINISHED SELECT MODE (EZ, ME, HA)
-         /*if (Input.GetKeyDown(KeyCode.E)){
-         print("I'm now restarting the game.");
-         max = 1000;
-         min = 1;
-         count = 6;
-         }
-         */
+    //Show the Count
+    private void Count()
+    {
+        //I tried using (count > 1 && count < 1) but for some reason it's avoiding it? I additionally tried (count >= 2 && count <= 0) and that doesn't work either. 🤷
+        //So I made them separate. Sorry!
+        if (count > 1)
+        {
+            print("I have " + count + " guesses left.");
+        }
+        else if (count < 1)
+        {
+            print("I have " + count + " guesses left.");
+        }
+        else if (count == 1)
+        {
+            print("I have " + count + " guess left.");
+        }
+    }
+
+
+    //Reset
+    private void Reset()
+    {
+        max = maxSave;
+        min = minSave;
+        Start();
+    }
+
+    //HOLDUP (Let's the game pause for 3 seconds before resetting)
+    IEnumerator Hold()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        Reset();
+    }
+
+
+    // Update is called once per frame
+    void Update () {
+
+        //SELECT MODE (EZ, MED, HARD)
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            print("I'm now restarting the game to easy mode.");
+            count = 5;
+            Reset();
+        }
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            print("I'm now restarting the game to medium mode.");
+            count = 10;
+            Reset();
+        }
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            print("I'm now restarting the game to hard mode.");
+            count = 15;
+            Reset();
+        }
+
+        //Allows player to check the number of turns the computer has
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Count();
+        }
 
         //count check (checks if it's zero, and if so, player wins
-        if (count == 0)
+        else if (count == 0)
         {
-            //(switching the value to -1 so it doesn't pop up with the message a milltion times)
+            //(switching the value to -1 so it doesn't pop up with the message a million times)
             count = -1;
             print("... I guess you won...");
+            count = (countSave + 1);
+            StartCoroutine(Hold());
+        }
+
+        //Pressing R to restart
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            print("I'm now restarting the game.");
+            count = (countSave + 1);
+            Reset();
         }
 
         //Up arrow
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             min = guess;
             NextGuess();
@@ -86,6 +162,8 @@ public class GuesserScript : MonoBehaviour {
             }
             else
             print("i'm very smurt :O");
+            count = (countSave + 1);
+            StartCoroutine(Hold());
         }
     }
 }
