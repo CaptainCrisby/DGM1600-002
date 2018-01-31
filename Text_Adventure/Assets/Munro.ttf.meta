@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: a09466c51ec91ce49908dbb80608a525
-timeCreated: 1517243778
-licenseType: Pro
+guid: eeb3613a565e4d749bc6533bbc94384a
+timeCreated: 1517363775
+licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
-  fontSize: 16
+  fontSize: 1
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Unipix
+  fontName: Munro
   fontNames:
-  - Unipix
+  - Munro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 2

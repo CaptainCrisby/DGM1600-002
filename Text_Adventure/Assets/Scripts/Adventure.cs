@@ -9,12 +9,22 @@ public class Adventure : MonoBehaviour {
     private States currentState;
     public Text textObject;
     public Text titleObject;
+    public Text keyObject;
     public bool key = false;
     public string soda;
+    private bool user;
 
     // Use this for initialization
     void Start()
     {
+        //Checks whether or not the user is a number (UVU ID) or a word (real name)
+        if (System.Environment.UserName.Contains("1")){
+            user = false;
+        }
+        else{
+            user = true;
+        }
+
         currentState = States.lobby;
 
         //Setting up the random soda from the txt file
@@ -22,7 +32,6 @@ public class Adventure : MonoBehaviour {
         string[] lines = System.IO.File.ReadAllLines(path);
         soda = lines[Random.Range(0, lines.Length)];
     }
-
         // Update is called once per frame
         void Update() {
 
@@ -123,6 +132,7 @@ public class Adventure : MonoBehaviour {
     private void Lobby(){
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I'm in a dimly lit room..." +
+            "\n\"Test\"" +
             "\nThere are 2 doors, each with poorly written, illegible handwriting." +
             "\nJust trying to make out these words makes my head hurt..." +
             "\nLeft click for the first door, right click for the second door.";
@@ -137,15 +147,16 @@ public class Adventure : MonoBehaviour {
             "\nAt the very end there's a locked door...";
         if (key == true)
         {
-            textObject.text = "I use the key I just received..." +
+            textObject.text += "I use the <color=#800000ff> <b>key</b> </color> I just received..." +
                 "\nThe door unlocked!";
-            currentState = States.mirror;
+            if (Input.GetKeyDown(KeyCode.Mouse0)) currentState = States.mirror;
         }
         else if (key == false)
         {
-            textObject.text = "I don't have anything that could unlock this at this time." +
-                "\nBest I head back.";
-            currentState = States.lobby;
+            textObject.text += "I don't have anything that could unlock this at this time." +
+                "\nBest I head back." +
+                "\n Click to continue";
+            if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.lobby; }
         }
     }
 
@@ -169,23 +180,42 @@ public class Adventure : MonoBehaviour {
 
     private void Hospital()
     {
+
         textObject.text = "I hold back as the silhouette slowly puts away its object. " +
             "\nIt nods its head at me as my vision began to fade... " +
             "\n... " +
-            "\n... " +
-            "\nH-'s -akin- up!" +
-            "\nDo--or! -e's a-ke!" +
-            "\nA familiar white room surrounds me. " +
-            "\nHey! You're " + System.Environment.UserName + ", right?" +
-            "\n... " +
-            "\nI see. " +
-            "\nWell, you see, you've been in a coma " + System.Environment.UserName + " . " +
+            "\n\"...\" " +
+            "\n\"H-'s -akin- up!\"" +
+            "\n\"Do--or! -e's a-ke!\"" +
+            "\nA familiar white room surrounds me. ";
+            if (user == false) //if there's a number, it's your uvu id!
+        {
+            textObject.text += "\n\"Hey! You're UVU Number " + System.Environment.UserName + ", right?\"" +
+            "\n\"...\" " +
+            "\n\"I see.\"" +
+            "\n\"Well, you see, you've been in a coma " + System.Environment.UserName + " .\"" +
+            "\nI remember that number. " +
+            "\nMy family walks into the room, embracing the mere sight of my eyes open. " +
+            "\nI've missed them for such a long time. " +
+            "\nI wonder how much I've missed?" +
+            "\nEither way, I'm glad to be back home now. Safe from whatever weird dream that was. " +
+            "\nClick to continue.";
+            if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.good; }
+        }
+            else if (user == true) //If there's no number, it knows it's a name
+        {
+            textObject.text += "\n\"Hey! You're " + System.Environment.UserName + ", right?\"" +
+            "\n\"...\"" +
+            "\n\"I see.\"" +
+            "\n\"Well, you see, you've been in a coma " + System.Environment.UserName + " .\"" +
             "\nI remember that name. " +
             "\nMy family walks into the room, embracing the mere sight of my eyes open. " +
             "\nI've missed them for such a long time. " +
             "\nI wonder how much I've missed?" +
-            "\nEither way, I'm glad to be back home now. Safe from whatever weird dream that was. ";
-        currentState = States.good;
+            "\nEither way, I'm glad to be back home now. Safe from whatever weird dream that was. " +
+            "\nClick to continue.";
+            if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.good; }
+        }
     }
 
     private void Smash()
@@ -196,21 +226,39 @@ public class Adventure : MonoBehaviour {
             "\nAdmittedly, I can't help but laugh about the situation. " +
             "\nAnd the laughter slowly gets louder. " +
             "\nAnd louder. " +
+            "\n\"...\" " +
             "\n... " +
-            "\n... " +
-            "\nH-'s -akin- up!" +
-            "\nDo--or! -e's a-ke!" +
-            "\nAn uncomfortably bright, white room surrounds me. " +
-            "\nHey! You're " + System.Environment.UserName + ", right?" +
-            "\n... " +
-            "\nI see. " +
-            "\nWell, you see, you've been in a coma " + System.Environment.UserName + " . " +
+            "\n\"H-'s -akin- up!\"" +
+            "\n\"Do--or! -e's a-ke!\"" +
+            "\nAn uncomfortably bright, white room surrounds me. ";
+        if (user == false) //if there's a number, it's your uvu id!
+        {
+        textObject.text += "\n\"Hey! You're UVU number" + System.Environment.UserName + ", right?\"" +
+        "\n\"...\" " +
+        "\n\"I see.\" " +
+        "\n\"Well, you see, you've been in a coma " + System.Environment.UserName + " .\"" +
+        "\nThat's weird" +
+        "\nI don't remember that number. " +
+        "\nA family walks into the room, embracing the mere sight of my eyes open. " +
+        "\nBut I'm not sure I recognize them. " +
+        "\nAnd I don't think I ever will. " +
+        "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.bad; }
+        }
+        else if (user ==true) //if there isn't, it's your name
+        {
+            textObject.text += "\n\"Hey! You're " + System.Environment.UserName + ", right?\"" +
+            "\n\"...\" " +
+            "\n\"I see.\" " +
+            "\n\"Well, you see, you've been in a coma " + System.Environment.UserName + " .\" " +
             "\nThat's weird" +
             "\nI don't remember that name. " +
             "\nA family walks into the room, embracing the mere sight of my eyes open. " +
             "\nBut I'm not sure I recognize them. " +
-            "\nAnd I don't think I ever will. ";
-        currentState = States.bad;
+            "\nAnd I don't think I ever will. " +
+            "\nClick to continue.";
+            if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.bad; }
+        }
     }
 
     private void Bedroom()
@@ -249,8 +297,9 @@ public class Adventure : MonoBehaviour {
             "\nNot even a moment passes and the realization hit me... " +
             "\nI've been struck on the head. " +
             "\nA have of heat penetrated my head as I rapidly grasped the now throbbing ache. " +
-            "\nQuickly, my body grew numb as it slowly wobbed toward the floor... ";
-        currentState = States.bad;
+            "\nQuickly, my body grew numb as it slowly wobbed toward the floor... " +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.bad; }
     }
 
     private void NoCat()
@@ -258,7 +307,7 @@ public class Adventure : MonoBehaviour {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I decided not to enter in the cat's mouth. " +
             "\nThe room's quiet air is suddenly interrupted as the cat began to move its jaw. " +
-            "\nThanks man it remarked. " +
+            "\n\"Thanks man\" it remarked." +
             "\nHowever, just as quickly as it spoke, the silhouette appeared. " +
             "\nAnd before I know it, there is a trumpet and wristwatch in front of me. " +
             "\nPress T for the trumpet and W for the wristwatch. ";
@@ -295,30 +344,35 @@ public class Adventure : MonoBehaviour {
             "\nNot even a moment passes and the realization hit me... " +
             "\nI've been struck on the head. " +
             "\nA have of heat penetrated my head as I rapidly grasped the now throbbing ache. " +
-            "\nQuickly, my body grew numb as it slowly wobbled toward the floor... ";
-        currentState = States.bad;
+            "\nQuickly, my body grew numb as it slowly wobbled toward the floor... " +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.bad; }
     }
 
     private void Run()
     {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "No way I can take on this guy!" +
-            "\nI run back into the lobby, forgetting everything that just happened. ";
-        currentState = States.lobby;
+            "\nI run back into the lobby, forgetting everything that just happened. " +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.lobby; }
     }
 
     private void Wristwatch()
     {
+        key = true;
+        keyObject.text = "Keys x 1";
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I pick up the wriswatch to tell the time. " +
-            "\nThe current time is " + System.DateTime.Now + ". " +
+            "\n\"The current date and time is " + System.DateTime.Now + ".\"" +
             "\nThe silhouette readjusts his stance, seemingly pleased with this response. " +
             "\nHe's dropped something... " +
-            "\nA... key?" + (key = true) +
+            "\nA... key?" + 
             "\nAs the silhouette disappears, I think about what this key could go to. " +
             "\nIt doesn't seem like there's anything important here anymore. " +
-            "\nSo let's try visiting the other door in the lobby. ";
-        currentState = States.hallway;
+            "\nSo let's try visiting the other door in the lobby. " +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.hallway; }
     }
 
     private void NoDrink()
@@ -327,7 +381,7 @@ public class Adventure : MonoBehaviour {
         textObject.text = "I don't feel like drinking it right now. " +
             "\nHowever, unease begins to fill inside of me as the Cola disappears. " +
             "\nSuddenly, " + soda + " man, the brand's mascot, pounds his way through the wall!" +
-            "\nUnfortunately, this is the end of the line. " +
+            "\n\"Unfortunately, this is the end of the line.\"" +
             "\nCola Man draws back his fist, readying his infamous punch. " +
             "\nSuddenly, Cola Man returns to the caramel colored ooze he is. " +
             "\nHe leaves behind a trinket. " +
@@ -340,14 +394,17 @@ public class Adventure : MonoBehaviour {
 
     private void NoEat()
     {
+        key = true;
+        keyObject.text = "Keys x 1";
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I don't think it's a good idea to eat this thing. " +
             "\n... " +
             "\nIt began to glow a mysterious light. " +
-            "\nIt's turned into a key!" + (key = true) +
+            "\nIt's turned into a key!" + 
             "\nDoesn't seem like this room needs it. " +
-            "\nLooks like we'll have to try the other door in the lobby. ";
-        currentState = States.hallway;
+            "\nLooks like we'll have to try the other door in the lobby. " +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.hallway; }
     }
 
     private void Eat()
@@ -366,20 +423,21 @@ public class Adventure : MonoBehaviour {
             "\nThe door from where I came from is now closed shut and has locked itself." +
             "\nWithout much left to do, I guess I'll just have to sit and wait..." +
             "\nAnd wait..." +
-            "\nAnd wait.....................";
-        currentState = States.bad;
+            "\nAnd wait....................." +
+            "\nClick to continue.";
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.bad; }
     }
 
     private void BadEnd()
     {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
-        textObject.text = "\nit's the bad ending mofos";
+        textObject.text = "\nit's the bad ending";
     }
 
     private void GoodEnd()
     {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
-        textObject.text = "\nit's the good ending mofos";
+        textObject.text = "\nit's the good ending";
     }
 
 }
