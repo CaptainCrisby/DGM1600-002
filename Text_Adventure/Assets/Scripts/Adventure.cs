@@ -132,10 +132,9 @@ public class Adventure : MonoBehaviour {
     private void Lobby(){
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I'm in a dimly lit room..." +
-            "\n\"Test\"" +
-            "\nThere are 2 doors, each with poorly written, illegible handwriting." +
+            "\nThere are <color=#800000ff><b>2 doors</b></color>, each with poorly written, illegible handwriting." +
             "\nJust trying to make out these words makes my head hurt..." +
-            "\nLeft click for the first door, right click for the second door.";
+            "\n<i>Left click for the first door, right click for the second door.</i>";
         if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.hallway; }
         if (Input.GetKeyDown(KeyCode.Mouse1)) { currentState = States.bedroom; }
     }
@@ -155,7 +154,7 @@ public class Adventure : MonoBehaviour {
         {
             textObject.text += "I don't have anything that could unlock this at this time." +
                 "\nBest I head back." +
-                "\n Click to continue";
+                "\n<i>Click to continue.</i>";
             if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.lobby; }
         }
     }
@@ -173,7 +172,7 @@ public class Adventure : MonoBehaviour {
             "\nHe's holding an object with an obvious trigger and handle at hand. " +
             "\nThe room has, for some reason, has begun to snow. " +
             "\nWhat do I do?" +
-            "\nLeft click to smash the mirror, and right click to hold back. ";
+            "\n<i>Left click to smash the mirror, and right click to hold back.</i>";
         if (Input.GetKeyDown(KeyCode.Mouse0)) { currentState = States.smash; }
         if (Input.GetKeyDown(KeyCode.Mouse1)) { currentState = States.hospital; }
     }
@@ -265,10 +264,10 @@ public class Adventure : MonoBehaviour {
     {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I open the door carefully... " +
-            "\nIt's a bedroom. " +
+            "\nIt's a <color=#800000ff> <b>bedroom.</color> </b> " +
             "\nThe bed looks super comfy, but you resist temptation. " +
-            "\nStrangely enough, a Giant can of " + soda + " sits in the room. " +
-            "\nPress D to drink or N to not drink. ";
+            "\nStrangely enough, a <color=#800000ff> <b>giant can of " + soda + "</color> </b> sits in the room. " +
+            "\n<i>Press D to drink or N to not drink.</i>";
         if (Input.GetKeyDown(KeyCode.D)) { currentState = States.drink; }
         if (Input.GetKeyDown(KeyCode.N)) { currentState = States.noDrink; }
     }
@@ -278,7 +277,7 @@ public class Adventure : MonoBehaviour {
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
         textObject.text = "I feel rejuvenated!" +
             "\nA giant cat head crashes through the wall with its mouth wide open. " +
-            "\nPress E to enter, N to not. ";
+            "\n<i>Press E to enter, N to not.</i>";
         if (Input.GetKeyDown(KeyCode.E)) { currentState = States.enter; }
         if (Input.GetKeyDown(KeyCode.N)) { currentState = States.noEnter; }
     }
@@ -308,7 +307,7 @@ public class Adventure : MonoBehaviour {
         textObject.text = "I decided not to enter in the cat's mouth. " +
             "\nThe room's quiet air is suddenly interrupted as the cat began to move its jaw. " +
             "\n\"Thanks man\" it remarked." +
-            "\nHowever, just as quickly as it spoke, the silhouette appeared. " +
+            "\nHowever, just as quickly as it spoke, <color=black> <b>the silhouette</color> </b> appeared. " +
             "\nAnd before I know it, there is a trumpet and wristwatch in front of me. " +
             "\nPress T for the trumpet and W for the wristwatch. ";
         if (Input.GetKeyDown(KeyCode.T)) { currentState = States.trumpet; }
