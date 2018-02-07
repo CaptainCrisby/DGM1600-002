@@ -130,7 +130,7 @@ public class Adventure : MonoBehaviour {
     // "\n" makes it so it displays on a new line. This is a bunch of stuff that runs depending on currentState's value.
 
     private void Lobby(){
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Lobby";
         textObject.text = "I'm in a dimly lit room..." +
             "\nThere are <color=#800000ff><b>2 doors</b></color>, each with poorly written, illegible handwriting." +
             "\nJust trying to make out these words makes my head hurt..." +
@@ -141,6 +141,7 @@ public class Adventure : MonoBehaviour {
 
     private void Hallway()
     {
+        titleObject.text = "The Hallway";
         textObject.text = "I can see there's a peculiarly long hallway." +
             "\nSeems pretty ominous." +
             "\nAt the very end there's a locked door...";
@@ -161,6 +162,7 @@ public class Adventure : MonoBehaviour {
 
     private void Mirror()
     {
+        titleObject.text = "The Mirror Room";
         textObject.text = "There's an image of me. " +
             "\nIt's showcasing some of my most memorable events... " +
             "\nLike the time I got an A to show Mom. " +
@@ -179,7 +181,7 @@ public class Adventure : MonoBehaviour {
 
     private void Hospital()
     {
-
+        titleObject.text = "";
         textObject.text = "I hold back as the silhouette slowly puts away its object. " +
             "\nIt nods its head at me as my vision began to fade... " +
             "\n... " +
@@ -219,6 +221,7 @@ public class Adventure : MonoBehaviour {
 
     private void Smash()
     {
+        titleObject.text = "";
         textObject.text = "I threw my fist at the mirror as hard as I could!" +
             "\nIt shattered. " +
             "\nAn overwhelming sense of pride washes over me. " +
@@ -262,7 +265,7 @@ public class Adventure : MonoBehaviour {
 
     private void Bedroom()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom";
         textObject.text = "I open the door carefully... " +
             "\nIt's a <color=#800000ff> <b>bedroom.</color> </b> " +
             "\nThe bed looks super comfy, but you resist temptation. " +
@@ -274,7 +277,7 @@ public class Adventure : MonoBehaviour {
 
     private void Drink()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: Cat Edition";
         textObject.text = "I feel rejuvenated!" +
             "\nA giant cat head crashes through the wall with its mouth wide open. " +
             "\n<i>Press E to enter, N to not.</i>";
@@ -284,7 +287,7 @@ public class Adventure : MonoBehaviour {
 
     private void Cat()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Cat's Mouth";
         textObject.text = "You decide to go inside the cat's mouth. " +
             "\nAs you walk into the deepest and darkest corners of its mouth, a silhoutte appears. " +
             "\nBefore you can get a good look at it... " +
@@ -303,7 +306,7 @@ public class Adventure : MonoBehaviour {
 
     private void NoCat()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom";
         textObject.text = "I decided not to enter in the cat's mouth. " +
             "\nThe room's quiet air is suddenly interrupted as the cat began to move its jaw. " +
             "\n\"Thanks man\" it remarked." +
@@ -316,7 +319,7 @@ public class Adventure : MonoBehaviour {
 
     private void Trumpet()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: The Musical";
         textObject.text = "I grab the trumpet and attempt to play it quickly. " +
             "\nOf course, however, I have no clue how to play the trumpet. " +
             "\nDespite my lack of knowledge, I attempt to serenade the silhouette. " +
@@ -328,7 +331,7 @@ public class Adventure : MonoBehaviour {
 
     private void Attack()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: Attacked";
         textObject.text = "The silhouette moves at a blinding speed. " +
             "\n*Woosh!*" +
             "\nSome sort of bludgeon just barely skims over my head. " +
@@ -350,7 +353,7 @@ public class Adventure : MonoBehaviour {
 
     private void Run()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: Flee";
         textObject.text = "No way I can take on this guy!" +
             "\nI run back into the lobby, forgetting everything that just happened. " +
             "\nClick to continue.";
@@ -359,6 +362,7 @@ public class Adventure : MonoBehaviour {
 
     private void Wristwatch()
     {
+        titleObject.text = "The Bedroom: Key Get";
         key = true;
         keyObject.text = "Keys x 1";
         titleObject.text = "WUDDUP PIMPS IN THE CELL";
@@ -376,7 +380,7 @@ public class Adventure : MonoBehaviour {
 
     private void NoDrink()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom feat. Mascot";
         textObject.text = "I don't feel like drinking it right now. " +
             "\nHowever, unease begins to fill inside of me as the Cola disappears. " +
             "\nSuddenly, " + soda + " man, the brand's mascot, pounds his way through the wall!" +
@@ -395,7 +399,7 @@ public class Adventure : MonoBehaviour {
     {
         key = true;
         keyObject.text = "Keys x 1";
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: Key Get";
         textObject.text = "I don't think it's a good idea to eat this thing. " +
             "\n... " +
             "\nIt began to glow a mysterious light. " +
@@ -408,7 +412,7 @@ public class Adventure : MonoBehaviour {
 
     private void Eat()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "The Bedroom: Eating Trinkets";
         textObject.text = "I figure I might as well eat it. " +
             "\nWhat else is it supposed to do? " +
             "\nI popped it into my mouth. " +
@@ -429,13 +433,13 @@ public class Adventure : MonoBehaviour {
 
     private void BadEnd()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "BAD END";
         textObject.text = "\nit's the bad ending";
     }
 
     private void GoodEnd()
     {
-        titleObject.text = "WUDDUP PIMPS IN THE CELL";
+        titleObject.text = "GOOD END";
         textObject.text = "\nit's the good ending";
     }
 
