@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounce: {fileID: 8300000, guid: 01e7e70c5a935f34ca19442cb3a4c9b5, type: 3}
+  bounce2: {fileID: 8300000, guid: 7d83f52c2e51a9a499f1385b36bedae2, type: 3}
   Paddle: {fileID: 1481858753585960, guid: f5d4eca4321e0f945bb14f3fbe667e9f, type: 2}
 --- !u!212 &212166207515566694
 SpriteRenderer:
