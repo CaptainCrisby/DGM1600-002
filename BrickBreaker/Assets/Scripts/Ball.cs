@@ -6,7 +6,13 @@ public class Ball : MonoBehaviour {
 
     public AudioClip bounce;
     public AudioClip bounce2;
+    public Vector2 startVector;
     public GameObject Paddle;
+
+    private void Start()
+    {
+        GetComponent<Rigidbody2D>().AddForce(startVector, ForceMode2D.Force);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
