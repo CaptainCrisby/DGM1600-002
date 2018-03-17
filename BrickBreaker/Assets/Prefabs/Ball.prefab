@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 96066159185986282}
   - component: {fileID: 114954908822102564}
   - component: {fileID: 82154411227891976}
+  - component: {fileID: 95812793968625002}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -39,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874794275202430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 3.193, z: 0}
+  m_LocalScale: {x: 0.11798612, y: 0.11798612, z: 0.11798612}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +60,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.3
   m_Material: {fileID: 6200000, guid: 2e9e1082affbe224ea0f1b83c8b9731a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -77,9 +78,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 2.906635
 --- !u!82 &82154411227891976
 AudioSource:
   m_ObjectHideFlags: 1
@@ -160,6 +161,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95812793968625002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874794275202430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78a5c2dccd9b2c34792f554340234acd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &96066159185986282
 TrailRenderer:
   serializedVersion: 2
@@ -196,7 +214,7 @@ TrailRenderer:
   m_Time: 0.35
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.19
+    widthMultiplier: 0.27
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -213,14 +231,14 @@ TrailRenderer:
         outSlope: -0.1291811
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.6102153
-        value: 0.9801979
+        time: 0.38656723
+        value: 0.9591446
         inSlope: 0.18298626
         outSlope: 0.18298626
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.9902186
-        value: 0.81132126
+        time: 0.51097053
+        value: 0.73763657
         inSlope: 0.028654208
         outSlope: 0.028654208
         tangentMode: 0
@@ -276,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounce: {fileID: 8300000, guid: 01e7e70c5a935f34ca19442cb3a4c9b5, type: 3}
   bounce2: {fileID: 8300000, guid: 7d83f52c2e51a9a499f1385b36bedae2, type: 3}
+  startVector: {x: 300, y: 300}
   Paddle: {fileID: 1481858753585960, guid: f5d4eca4321e0f945bb14f3fbe667e9f, type: 2}
 --- !u!212 &212166207515566694
 SpriteRenderer:
@@ -309,7 +328,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: 75b0a9cc03c23954b8230d64a6b59d09, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea52b3fb67c73e74b926b18ee40cc8e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
