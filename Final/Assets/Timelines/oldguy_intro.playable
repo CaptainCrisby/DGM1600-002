@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: oldguy_intro
   m_EditorClassIdentifier: 
   m_Id: 0
-  m_NextId: 8
+  m_NextId: 10
   m_Tracks:
   - {fileID: 114285889708492016}
   - {fileID: 114150479804803360}
   - {fileID: 114277231331906936}
   - {fileID: 114235254299852370}
-  m_FixedDuration: 0
+  m_FixedDuration: 7
   m_EditorSettings:
     fps: 60
   m_UpdateMode: 0
