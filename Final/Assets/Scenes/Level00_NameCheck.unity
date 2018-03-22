@@ -108,6 +108,46 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &70989683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 70989685}
+  - component: {fileID: 70989684}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &70989684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 70989683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4099e9a0ae130eb4bb754ba189bcb69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &70989685
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 70989683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 380.4683, y: 204.34985, z: 60.403763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327719523
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +256,14 @@ MonoBehaviour:
     sentences:
     - Sweet!
     - So your name is....
+    - playerName
+    - '...'
+    - '*That''s* your name?'
+    - Well, playerName , if I had to be quite honest with you...
+    - I just completely wasted your time.
+    - I just kinda wanted you to do that because I need the points
+    - Please!!! Give me points for this!
+    - Tata for now! We'll see each other again soon!
 --- !u!114 &327719529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &467157606
 GameObject:
@@ -572,6 +620,7 @@ MonoBehaviour:
   nameText: {fileID: 1707671646}
   dialogueText: {fileID: 467157608}
   animator: {fileID: 1533127821}
+  yourName: 
   talk: {fileID: 8300000, guid: 08a2c3a8ef2688e4287a28fcf72ed8d0, type: 3}
 --- !u!4 &1317017960
 Transform:
@@ -584,7 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1317017961
 AudioSource:
@@ -753,7 +802,7 @@ RectTransform:
   m_Children:
   - {fileID: 1533127818}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -847,7 +896,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 28.191002, y: 0, z: 0}
 --- !u!1 &1502488951
 GameObject:
@@ -4453,13 +4502,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871157950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 21}
+  m_LocalPosition: {x: 0, y: 0, z: -9.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 327719526}
   - {fileID: 873293543}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1871157952
 Animator:
@@ -4561,5 +4610,5 @@ Transform:
   m_Children:
   - {fileID: 1765690541}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

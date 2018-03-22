@@ -11,6 +11,9 @@ public class DialogueManager : MonoBehaviour {
   public Text dialogueText;
   public Animator animator;
 
+  //yourname testing
+  public string yourName;
+
   //audio information variables
   public AudioClip talk;
   private AudioSource source;
@@ -30,11 +33,15 @@ public class DialogueManager : MonoBehaviour {
 
     sentences = new Queue<string>();
     source = GetComponent<AudioSource>();   /////////////////////////////
+
+    //Get your name
+    yourName = GameObject.Find("NameManager").GetComponent<PlayerName>().playerName;
   }
 
 
   public void StartDialogue (Dialogue dialogue)
   {
+
       animator.SetBool("IsOpen", true);
 
       nameText.text = dialogue.name;
@@ -46,6 +53,7 @@ public class DialogueManager : MonoBehaviour {
         sentences.Enqueue(sentence);
       }
       DisplayNextSentence();
+
   }
 
 
@@ -56,8 +64,8 @@ public class DialogueManager : MonoBehaviour {
       EndDialogue();
       return;
     }
-
     string sentence = sentences.Dequeue();
+
     StopAllCoroutines();
     StartCoroutine(TypeSentence(sentence));
   }
