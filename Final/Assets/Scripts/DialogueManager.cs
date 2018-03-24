@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour {
   private float lowPitchRange = .75F;
   private float highPitchRange = 1.5F;
 
+  //For getting SceneName and checking
   private string sceneName;
   private Scene currentScene;
 
@@ -72,6 +73,13 @@ public class DialogueManager : MonoBehaviour {
 
   IEnumerator TypeSentence (string sentence)
   {
+
+    //check if I wrote the phrase "Playername" and replace it with the real name
+    if (sentence.Contains("playerName"))
+    {
+      sentence = sentence.Replace("playerName", yourName);
+    }
+
     dialogueText.text = "";
     foreach (char letter in sentence.ToCharArray())
     {
