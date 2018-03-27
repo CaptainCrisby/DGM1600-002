@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+  public new AudioSource audio;
+  public AudioClip dab;
+
   public float moveSpeed;
   public float jumpForce;
   public CharacterController controller;
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour {
     if (Input.GetButtonDown("Fire1"))
     {
       anim.SetBool("isDabbing", true);
+      audio.PlayOneShot(dab);
       Debug.Log("I'm supposed to be dabbing");
     } else if(Input.GetButtonUp("Fire1"))
     {
