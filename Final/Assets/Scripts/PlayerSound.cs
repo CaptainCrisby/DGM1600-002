@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSound : MonoBehaviour {
 
   public AudioClip step;
+  public AudioClip dab;
   public AudioSource source;
 
   private float lowPitchRange = .75F;
@@ -15,6 +16,13 @@ public class PlayerSound : MonoBehaviour {
   {
     source.pitch = Random.Range(lowPitchRange, highPitchRange);
     source.PlayOneShot(step);
+  }
+
+  //function that is called during dabbing animation event
+  void Dab()
+  {
+    source.pitch = Random.Range(lowPitchRange, highPitchRange);
+    source.PlayOneShot(dab);
   }
 
 }

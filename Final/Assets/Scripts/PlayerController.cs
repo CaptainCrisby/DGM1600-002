@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour {
 
   public GameObject playerModel;
 
+  public float knockBackForce;
+  public float knockBackTime;
+  private float knockBackCounter;
+
 	// Use this for initialization
 	void Start () {
     controller = GetComponent<CharacterController>();
@@ -27,21 +31,26 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-    float yStore = moveDirection.y;
-    moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-    //this makes it so that if we were to go diagonal that the movement speed isn't doubled.
-    moveDirection = moveDirection.normalized * moveSpeed;
-    moveDirection.y = yStore;
-
-    //if the player is grounded, jump. Also sets the jumpforce.
-    if (controller.isGrounded)
+    if (knockBackCounter <= 0)
     {
-      moveDirection.y = 0f;
-      if (Input.GetButtonDown("Jump"))
+      float yStore = moveDirection.y;
+      moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+      //this makes it so that if we were to go diagonal that the movement speed isn't doubled.
+      moveDirection = moveDirection.normalized * moveSpeed;
+      moveDirection.y = yStore;
+
+      //if the player is grounded, jump. Also sets the jumpforce.
+      if (controller.isGrounded)
       {
-        moveDirection.y = jumpForce;
+        moveDirection.y = 0f;
+        if (Input.GetButtonDown("Jump"))
+        {
+          moveDirection.y = jumpForce;
+        }
       }
+    } else
+    {
+      knockBackCounter -= Time.deltaTime;
     }
 
     //moves stuff in certain directions
@@ -63,7 +72,6 @@ public class PlayerController : MonoBehaviour {
     if (Input.GetButtonDown("Fire1"))
     {
       anim.SetBool("isDabbing", true);
-      audio.PlayOneShot(dab);
       Debug.Log("I'm supposed to be dabbing");
     } else if(Input.GetButtonUp("Fire1"))
     {
@@ -71,4 +79,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     }
+
+  public void Knockback(Vector3 direction)
+  {
+    knockBackCounter = knockBackTime;
+
+    moveDirection = direction * knockBackForce;
+    moveDirection.y = knockBackForce;
+  }
+
 }
