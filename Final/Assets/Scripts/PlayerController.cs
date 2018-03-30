@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour {
   public new AudioSource audio;
   public AudioClip dab;
 
+  //ADVANCED JUMPING TEST REEEEEEEEEEEE
+  public float fallMultiplier = 2.5f;
+  public float lowJumpMultiplier = 2f;
+  bool jump = false;
+  bool jumpCancel = false;
+
   public float moveSpeed;
   public float jumpForce;
   public CharacterController controller;
@@ -31,6 +37,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+    //knockback checking, if not knocking back then we can move
     if (knockBackCounter <= 0)
     {
       float yStore = moveDirection.y;
@@ -69,6 +77,7 @@ public class PlayerController : MonoBehaviour {
     anim.SetBool("isGrounded", controller.isGrounded);
     anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
 
+    //Dabbing
     if (Input.GetButtonDown("Fire1"))
     {
       anim.SetBool("isDabbing", true);
@@ -78,7 +87,17 @@ public class PlayerController : MonoBehaviour {
       anim.SetBool("isDabbing", false);
     }
 
+    //advanced jumping testing
+    if (Input.GetButtonDown("Jump") && controller.isGrounded)
+    {
+      jump = true;
     }
+    if(Input.GetButtonUp("Jump") && !controller.isGrounded)
+    {
+      jumpCancel = true;
+    }
+
+  }
 
   public void Knockback(Vector3 direction)
   {
@@ -86,6 +105,20 @@ public class PlayerController : MonoBehaviour {
 
     moveDirection = direction * knockBackForce;
     moveDirection.y = knockBackForce;
+  }
+
+  //TESTING WALL JUMP*********************************
+  private void OnControllerColliderHit(ControllerColliderHit hit)
+  {
+    if (!controller.isGrounded && hit.normal.y < 0.1f)
+    {
+      if (Input.GetButtonDown("Jump"))
+      {
+        Debug.DrawRay(hit.point, hit.normal, Color.red, 1.25f);
+        moveDirection.y = jumpForce;
+        //???
+      }
+    }
   }
 
 }

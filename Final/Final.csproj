@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlinkAnimationRandom.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
@@ -91,9 +92,11 @@
     <Compile Include="Assets\Scripts\OldGuy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerName.cs" />
+    <Compile Include="Assets\Scripts\PlayerParticles.cs" />
     <Compile Include="Assets\Scripts\PlayerSound.cs" />
     <Compile Include="Assets\Scripts\Radio.cs" />
     <Compile Include="Assets\Scripts\SanityNotes.cs" />
+    <Compile Include="Assets\Scripts\SmoothJump.cs" />
     <Compile Include="Assets\Shaders\Billboard\billboard.cs" />
     <Compile Include="Assets\Shaders\imageEffects\cPrecision.cs" />
   </ItemGroup>

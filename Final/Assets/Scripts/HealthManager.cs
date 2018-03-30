@@ -21,7 +21,12 @@ public class HealthManager : MonoBehaviour {
   private Vector3 respawnPoint;
   public float respawnLength;
 
-  public Text healthText;
+  public GameObject deathEffect;
+  public Image blackScreen;
+  private bool isFadeToBlack;
+  private bool isFadeFromBlack;
+  public float fadeSpeed;
+  public float waitForFade;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +54,24 @@ public class HealthManager : MonoBehaviour {
       }
     }
 
-    healthText.text = "Current Health: " + currentHealth;
+
+    if (isFadeToBlack)
+    {
+      blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
+      if(blackScreen.color.a == 1f)
+      {
+        isFadeToBlack = false;
+      }
+    }
+
+    if (isFadeFromBlack)
+    {
+      blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
+      if (blackScreen.color.a == 0f)
+      {
+        isFadeFromBlack = false;
+      }
+    }
 
   }
 
@@ -90,9 +112,18 @@ public class HealthManager : MonoBehaviour {
   public IEnumerator RespawnCo()
   {
     isRespawning = true;
-    thePlayer.gameObject.SetActive(false);
+    thePlayer.gameObject.SetActive(true); //PLAY AROUND WITH THIS************************
+    Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
 
     yield return new WaitForSeconds(respawnLength);
+
+    isFadeToBlack = true;
+
+    yield return new WaitForSeconds(waitForFade);
+
+    isFadeToBlack = false;
+    isFadeFromBlack = true;
+
     isRespawning = false;
 
     thePlayer.gameObject.SetActive(true);
@@ -114,4 +145,8 @@ public class HealthManager : MonoBehaviour {
     }
   }
 
+  public void SetSpawnPoint(Vector3 newPosition)
+  {
+    respawnPoint = newPosition;
+  }
 }
