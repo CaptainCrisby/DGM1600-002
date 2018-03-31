@@ -6,15 +6,14 @@ public class PlayerController : MonoBehaviour {
 
   public new AudioSource audio;
   public AudioClip dab;
-
-  //ADVANCED JUMPING TEST REEEEEEEEEEEE
-  public float fallMultiplier = 2.5f;
-  public float lowJumpMultiplier = 2f;
-  bool jump = false;
-  bool jumpCancel = false;
+  private bool isDabbing;
 
   public float moveSpeed;
+  float walkSpeed = 10;
+  float runSpeed = 15;
+
   public float jumpForce;
+  float minJumpForce = 10;
   public CharacterController controller;
 
   private Vector3 moveDirection;
@@ -30,9 +29,10 @@ public class PlayerController : MonoBehaviour {
   public float knockBackTime;
   private float knockBackCounter;
 
-	// Use this for initialization
-	void Start () {
+  // Use this for initialization
+  void Start () {
     controller = GetComponent<CharacterController>();
+    isDabbing = false;
 	}
 	
 	// Update is called once per frame
@@ -48,9 +48,10 @@ public class PlayerController : MonoBehaviour {
       moveDirection.y = yStore;
 
       //if the player is grounded, jump. Also sets the jumpforce.
-      if (controller.isGrounded)
+      if (IsGrounded())
       {
         moveDirection.y = 0f;
+
         if (Input.GetButtonDown("Jump"))
         {
           moveDirection.y = jumpForce;
@@ -59,6 +60,14 @@ public class PlayerController : MonoBehaviour {
     } else
     {
       knockBackCounter -= Time.deltaTime;
+    }
+    //jumps the minimum value
+    if (Input.GetButtonUp("Jump"))
+    {
+      if (moveDirection.y > minJumpForce)
+      {
+        moveDirection.y = minJumpForce;
+      }
     }
 
     //moves stuff in certain directions
@@ -74,29 +83,47 @@ public class PlayerController : MonoBehaviour {
     }
 
     //Animation parameters
-    anim.SetBool("isGrounded", controller.isGrounded);
+    anim.SetBool("isGrounded", IsGrounded());
     anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
 
     //Dabbing
     if (Input.GetButtonDown("Fire1"))
     {
       anim.SetBool("isDabbing", true);
-      Debug.Log("I'm supposed to be dabbing");
+      isDabbing = true;
     } else if(Input.GetButtonUp("Fire1"))
     {
       anim.SetBool("isDabbing", false);
+      isDabbing = false;
     }
 
-    //advanced jumping testing
-    if (Input.GetButtonDown("Jump") && controller.isGrounded)
+    //Dabbing Run
+    if (isDabbing == true)
     {
-      jump = true;
-    }
-    if(Input.GetButtonUp("Jump") && !controller.isGrounded)
+      moveSpeed = runSpeed;
+    } else if (isDabbing == false)
     {
-      jumpCancel = true;
+      moveSpeed = walkSpeed;
     }
 
+
+  }
+
+  //sets the radio dance idle to true
+  private void OnTriggerEnter(Collider other)
+  {
+    if (other.gameObject.tag == "Radio")
+    {
+      anim.SetBool("isNearRadio", true);
+    }
+  }
+  //sets the radio dance idle to false
+  private void OnTriggerExit(Collider other)
+  {
+    if (other.gameObject.tag == "Radio")
+    {
+      anim.SetBool("isNearRadio", false);
+    }
   }
 
   public void Knockback(Vector3 direction)
@@ -105,6 +132,23 @@ public class PlayerController : MonoBehaviour {
 
     moveDirection = direction * knockBackForce;
     moveDirection.y = knockBackForce;
+  }
+
+  //Helps when going down slopes that he isn't "falling" and instead he snaps to it
+  private bool IsGrounded()
+  {
+    if (controller.isGrounded)
+      return true;
+
+    Vector3 bottom = controller.transform.position - new Vector3(0, controller.height / 2, 0);
+
+    RaycastHit hit;
+    if (Physics.Raycast(bottom, new Vector3(0, -1, 0), out hit, .3f))
+    {
+      controller.Move(new Vector3(0, -hit.distance, 0));
+      return true;
+    }
+    return false;
   }
 
   //TESTING WALL JUMP*********************************

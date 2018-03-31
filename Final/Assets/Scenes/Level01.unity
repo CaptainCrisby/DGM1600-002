@@ -657,8 +657,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 256
   DopplerLevel: 0
-  MinDistance: 0.1
-  MaxDistance: 1
+  MinDistance: 0.67
+  MaxDistance: 1.88
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2442,6 +2442,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 510d79a3276e24d45aec576b0bad2448, type: 2}
+    - target: {fileID: 100004, guid: 28137e90057705b4b82fcf02f448abe0, type: 3}
+      propertyPath: m_TagString
+      value: Radio
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28137e90057705b4b82fcf02f448abe0, type: 3}
   m_IsPrefabParent: 0
@@ -2657,7 +2661,7 @@ GameObject:
   - component: {fileID: 1204264787}
   m_Layer: 0
   m_Name: Radio
-  m_TagString: Untagged
+  m_TagString: Radio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2678,6 +2682,8 @@ MonoBehaviour:
   anim: {fileID: 365648852}
   music:
   - {fileID: 8300000, guid: d88db60ff6110e645b27a4bb4759168d, type: 3}
+  - {fileID: 8300000, guid: a8ad4bb918cfc4b4f9656aefd1830bd0, type: 3}
+  - {fileID: 8300000, guid: 3a444f9d505d0c5468aac917944a7f9d, type: 3}
   bang: {fileID: 8300000, guid: 9afe05b074186c74883168ade18f8547, type: 3}
   source: {fileID: 365648855}
   alreadyDabbed: 0
@@ -2721,7 +2727,6 @@ GameObject:
   - component: {fileID: 1264981451}
   - component: {fileID: 1264981455}
   - component: {fileID: 1264981450}
-  - component: {fileID: 1264981456}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2826,8 +2831,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 952627644}
   dab: {fileID: 8300000, guid: 18af815eebac61440bb83e5c2c22e1ce, type: 3}
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
   moveSpeed: 15
   jumpForce: 20
   controller: {fileID: 1264981450}
@@ -2838,20 +2841,6 @@ MonoBehaviour:
   playerModel: {fileID: 952627640}
   knockBackForce: 15
   knockBackTime: 0.3
---- !u!114 &1264981456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1264981449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 114fd501a6429604187279398777f547, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
-  player: {fileID: 1264981449}
 --- !u!1 &1272078202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +2982,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 366324218
+  randomSeed: -553162883
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6549,9 +6538,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1625522142}
   - component: {fileID: 1625522146}
-  - component: {fileID: 1625522145}
   - component: {fileID: 1625522144}
   - component: {fileID: 1625522143}
+  - component: {fileID: 1625522145}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -6621,8 +6610,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1625522145
-CapsuleCollider:
+--- !u!65 &1625522145
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -6630,10 +6619,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000017881393, y: -0.00000035762787, z: -0.00000008940697}
 --- !u!33 &1625522146
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7075,7 +7063,7 @@ Transform:
   m_GameObject: {fileID: 1813496776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5.7, z: 0}
-  m_LocalScale: {x: 85.7, y: 0.44, z: 146.55}
+  m_LocalScale: {x: 85.7, y: 0.1, z: 146.55}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
@@ -7154,7 +7142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1986782247}
   - component: {fileID: 1986782250}
-  - component: {fileID: 1986782249}
   - component: {fileID: 1986782248}
   - component: {fileID: 1986782251}
   m_Layer: 0
@@ -7172,7 +7159,7 @@ Transform:
   m_GameObject: {fileID: 1986782246}
   m_LocalRotation: {x: -0.000000058810343, y: 8.8903107e-10, z: -0.0000000084096135,
     w: 1}
-  m_LocalPosition: {x: 0.015658855, y: -0.97, z: 0.17}
+  m_LocalPosition: {x: -0.025000095, y: -0.97, z: 0.17000008}
   m_LocalScale: {x: 0.16971837, y: 0.1697185, z: 0.16971855}
   m_Children: []
   m_Father: {fileID: 1264981454}
@@ -7210,20 +7197,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1986782249
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1986782246}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1986782250
 MeshFilter:
   m_ObjectHideFlags: 0

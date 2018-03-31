@@ -96,7 +96,6 @@
     <Compile Include="Assets\Scripts\PlayerSound.cs" />
     <Compile Include="Assets\Scripts\Radio.cs" />
     <Compile Include="Assets\Scripts\SanityNotes.cs" />
-    <Compile Include="Assets\Scripts\SmoothJump.cs" />
     <Compile Include="Assets\Shaders\Billboard\billboard.cs" />
     <Compile Include="Assets\Shaders\imageEffects\cPrecision.cs" />
   </ItemGroup>

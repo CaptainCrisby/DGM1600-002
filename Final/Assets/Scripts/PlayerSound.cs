@@ -8,6 +8,7 @@ public class PlayerSound : MonoBehaviour {
   public AudioClip dab;
   public AudioSource source;
 
+  private bool hasDabbed;
   private float lowPitchRange = .75F;
   private float highPitchRange = 1.5F;
 
@@ -21,8 +22,20 @@ public class PlayerSound : MonoBehaviour {
   //function that is called during dabbing animation event
   void Dab()
   {
-    source.pitch = Random.Range(lowPitchRange, highPitchRange);
-    source.PlayOneShot(dab);
+    if (Input.GetButtonDown("Fire1") && hasDabbed == false)
+    {
+      source.pitch = Random.Range(lowPitchRange, highPitchRange);
+      source.PlayOneShot(dab);
+      hasDabbed = true;
+    }
+  }
+
+  private void Update()
+  {
+    if (Input.GetButtonUp("Fire1"))
+    {
+      hasDabbed = false;
+    }
   }
 
 }

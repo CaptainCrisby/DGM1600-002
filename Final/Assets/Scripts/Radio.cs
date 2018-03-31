@@ -26,23 +26,25 @@ public class Radio : MonoBehaviour {
   //If the player is close and is dabbing
   void OnTriggerStay(Collider other)
   {
-    PlayOnce();
-    Debug.Log("You're in my space");
-
-
-    if(alreadyDabbed == false)
+    if (other.gameObject.tag == "Player")
     {
-      anim.SetBool("hit", false);
-    }
+      PlayOnce();
+      Debug.Log("You're in my space");
 
 
-    if (alreadyDabbed == false && Input.GetButtonDown("Fire1"))
-    {
-      anim.SetBool("hit", true);
-      Debug.Log("I detect you!");
+      if (alreadyDabbed == false)
+      {
+        anim.SetBool("hit", false);
+      }
 
-      //Play a new song
-      PlayNewSong();
+
+      if (alreadyDabbed == false && Input.GetButtonDown("Fire1"))
+      {
+        anim.SetBool("hit", true);
+
+        //Play a new song
+        PlayNewSong();
+      }
     }
   }
 
