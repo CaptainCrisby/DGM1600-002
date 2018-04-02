@@ -29,7 +29,6 @@ public class CameraController : MonoBehaviour {
     }
 
     pivot.transform.position = target.transform.position;
-    //pivot.transform.parent = target.transform;**************************
     pivot.transform.parent = null;
 
     //hide the cursor
@@ -60,7 +59,7 @@ public class CameraController : MonoBehaviour {
     float desiredYAngle = pivot.eulerAngles.y;
     float desiredXAngle = pivot.eulerAngles.x;
 
-    if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180)
+    if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180f)
     {
       pivot.rotation = Quaternion.Euler(maxViewAngle, desiredYAngle, 0);
     }
@@ -80,13 +79,6 @@ public class CameraController : MonoBehaviour {
     {
       transform.position = new Vector3(transform.position.x, target.position.y - 0.5f, transform.position.z);
     }
-
-    //custom thing from yatube that's supposed to make it smooth
-    /*transform.position = Vector3.Lerp(transform.position, target.position - offset, moveSpeed * Time.deltaTime);
-
-    Vector3 pos = target.position - transform.position;
-    Quaternion newRot = Quaternion.LookRotation(pos);
-    transform.rotation = Quaternion.Lerp(transform.rotation, newRot, moveSpeed * Time.deltaTime); */
 
   }
 }

@@ -159,10 +159,15 @@ public class PlayerController : MonoBehaviour {
       if (Input.GetButtonDown("Jump"))
       {
         Debug.DrawRay(hit.point, hit.normal, Color.red, 1.25f);
-        moveDirection.y = jumpForce;
-        //???
+
+        //????
+        knockBackCounter = knockBackTime;
+
+        moveDirection = hit.normal * knockBackForce;
+        moveDirection.y = knockBackForce;
       }
     }
+
   }
 
 }
