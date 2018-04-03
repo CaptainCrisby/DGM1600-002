@@ -38,6 +38,13 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+    //de-parents the player from a moving object
+    if (!controller.isGrounded)
+    {
+      transform.parent = null;
+    }
+
+
     //knockback checking, if not knocking back then we can move
     if (knockBackCounter <= 0)
     {
@@ -126,6 +133,7 @@ public class PlayerController : MonoBehaviour {
     }
   }
 
+
   public void Knockback(Vector3 direction)
   {
     knockBackCounter = knockBackTime;
@@ -166,6 +174,13 @@ public class PlayerController : MonoBehaviour {
         moveDirection = hit.normal * knockBackForce;
         moveDirection.y = knockBackForce;
       }
+    }
+
+
+    //moving platform makes the player "stick" to it and keep the transformations
+    if (hit.gameObject.tag == "MovingPlatform" && controller.isGrounded)
+    {
+      transform.parent = hit.transform;
     }
 
   }
