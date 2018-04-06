@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour {
   public float knockBackTime;
   private float knockBackCounter;
 
+  public Transform shadow;
+  public LayerMask ignoreLayer;
+
   // Use this for initialization
   void Start () {
     controller = GetComponent<CharacterController>();
@@ -113,7 +116,15 @@ public class PlayerController : MonoBehaviour {
       moveSpeed = walkSpeed;
     }
 
+    UpdateShadow();
 
+  }
+
+  private void UpdateShadow()
+  {
+    RaycastHit hit;
+    Physics.Raycast(transform.position, Vector3.down, out hit, ignoreLayer);
+    shadow.position = new Vector3(hit.point.x, hit.point.y + 0.05f, hit.point.z);
   }
 
   //sets the radio dance idle to true
