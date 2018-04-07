@@ -1,5 +1,5 @@
-/* Adjust player animations and transitions
- * Fix respawn animation
+/* Need to fix the UI transitions. They won't stay after a while.
+ * 
  * 
  *
  *

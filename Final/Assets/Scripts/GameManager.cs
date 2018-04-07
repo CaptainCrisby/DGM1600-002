@@ -20,12 +20,29 @@ public class GameManager : MonoBehaviour {
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
   }
 
-  //Adding gem count in HUD
+  //Adding gem count in HUD***********************************************************
   public void AddGem(int gemToAdd)
   {
+    GameObject.Find("GemUI").GetComponent<Animator>().SetBool("gemObtain", true);
     currentGem += gemToAdd;
     gemText.text = " : " + currentGem;
+
+    //if gemObtain boolean is already activated, stop the current coroutine and start a new one
+    if(GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain"))
+    {
+      StopCoroutine(ExitTime());
+      StartCoroutine(ExitTime());
+    }
+
   }
+
+  IEnumerator ExitTime()
+  {
+    yield return new WaitForSeconds(10.0f);
+    GameObject.Find("GemUI").GetComponent<Animator>().SetBool("gemObtain", false);
+  }
+
+
 
   //Updates health using a switch statement
   private void Update()

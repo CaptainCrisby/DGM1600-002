@@ -87,6 +87,9 @@ public class HealthManager : MonoBehaviour {
       }
       else
       {
+        GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthChange", true);
+
+        StartCoroutine(ExitTime());
 
         thePlayer.Knockback(direction);
 
@@ -97,6 +100,12 @@ public class HealthManager : MonoBehaviour {
         flashCounter = flashLength;
       }
     }
+  }
+
+  IEnumerator ExitTime()
+  {
+    GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthUI", false);
+    yield return new WaitForSeconds(5.0f);
   }
 
   public void Respawn()

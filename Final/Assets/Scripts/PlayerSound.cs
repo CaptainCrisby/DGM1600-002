@@ -6,6 +6,7 @@ public class PlayerSound : MonoBehaviour {
 
   public AudioClip step;
   public AudioClip dab;
+  public AudioClip flip;
   public AudioSource source;
 
   private bool hasDabbed;
@@ -28,6 +29,12 @@ public class PlayerSound : MonoBehaviour {
       source.PlayOneShot(dab);
       hasDabbed = true;
     }
+  }
+
+  void Flip()
+  {
+    source.pitch = Random.Range(lowPitchRange, highPitchRange);
+    source.PlayOneShot(flip);
   }
 
   private void Update()

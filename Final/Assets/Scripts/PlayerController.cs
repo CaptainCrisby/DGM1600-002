@@ -173,17 +173,22 @@ public class PlayerController : MonoBehaviour {
   //TESTING WALL JUMP*********************************
   private void OnControllerColliderHit(ControllerColliderHit hit)
   {
-    if (!controller.isGrounded && hit.normal.y < 0.1f)
+    if (!controller.isGrounded && hit.normal.y < 0.1f && hit.gameObject.tag == "WallJump")
     {
+      anim.SetBool("isSliding", true);
+      anim.SetBool("isWallJumping", false);
+
       if (Input.GetButtonDown("Jump"))
       {
         Debug.DrawRay(hit.point, hit.normal, Color.red, 1.25f);
 
-        //????
+        //lets him jump on walls
         knockBackCounter = knockBackTime;
 
         moveDirection = hit.normal * knockBackForce;
         moveDirection.y = knockBackForce;
+        anim.SetBool("isWallJumping", true);
+        anim.SetBool("isSliding", false);
       }
     }
 
@@ -192,6 +197,11 @@ public class PlayerController : MonoBehaviour {
     if (hit.gameObject.tag == "MovingPlatform" && controller.isGrounded)
     {
       transform.parent = hit.transform;
+    }
+
+    if (controller.isGrounded)
+    {
+      anim.SetBool("isSliding", false);
     }
 
   }
