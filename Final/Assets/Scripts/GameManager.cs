@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
   public int currentHealth; //the health the player currently has
   public Sprite[] healthSprites; //The heart images 
   public Image img; //HUD Heart image
-
+  
   //loading next levels
   public void LoadNextLevel()
   {
@@ -27,18 +27,20 @@ public class GameManager : MonoBehaviour {
     currentGem += gemToAdd;
     gemText.text = " : " + currentGem;
 
-    //if gemObtain boolean is already activated, stop the current coroutine and start a new one
-    if(GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain"))
+    if (GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain") == true)
     {
-      StopCoroutine(ExitTime());
-      StartCoroutine(ExitTime());
+      StopCoroutine("ExitTime");
+      StartCoroutine("ExitTime");
+    } else if (GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain") == false)
+    {
+      StartCoroutine("ExitTime");
     }
 
   }
 
   IEnumerator ExitTime()
   {
-    yield return new WaitForSeconds(10.0f);
+    yield return new WaitForSeconds(3.0f);
     GameObject.Find("GemUI").GetComponent<Animator>().SetBool("gemObtain", false);
   }
 

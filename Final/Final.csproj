@@ -80,11 +80,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlinkAnimationRandom.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\DisableMovement.cs" />
+    <Compile Include="Assets\Scripts\DisableVisibility.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GemPickup.cs" />
     <Compile Include="Assets\Scripts\HealthManager.cs" />

@@ -89,7 +89,17 @@ public class HealthManager : MonoBehaviour {
       {
         GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthChange", true);
 
-        StartCoroutine(ExitTime());
+        //UI transition stuff
+        if (GameObject.Find("HealthUI").GetComponent<Animator>().GetBool("healthChange") == true)
+        {
+          StopCoroutine("ExitTime");
+          StartCoroutine("ExitTime");
+        }
+        else if (GameObject.Find("HealthUI").GetComponent<Animator>().GetBool("healthChange") == false)
+        {
+          StartCoroutine("ExitTime");
+        }
+
 
         thePlayer.Knockback(direction);
 
@@ -104,8 +114,8 @@ public class HealthManager : MonoBehaviour {
 
   IEnumerator ExitTime()
   {
-    GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthUI", false);
     yield return new WaitForSeconds(5.0f);
+    GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthChange", false);
   }
 
   public void Respawn()
