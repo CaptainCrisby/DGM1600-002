@@ -25,5 +25,9 @@ public class BlinkAnimationRandom : MonoBehaviour {
         blinkEyeRate = Random.Range(4f, 10f);
       }
     }
+
+
+
+
   }
 }

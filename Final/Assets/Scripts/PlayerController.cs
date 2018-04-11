@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour {
 
   }
 
+  //Updates the player's shadow based on their shadow
   private void UpdateShadow()
   {
     RaycastHit hit;
@@ -141,6 +142,11 @@ public class PlayerController : MonoBehaviour {
     if (other.gameObject.tag == "Radio")
     {
       anim.SetBool("isNearRadio", false);
+    }
+
+    if (other.gameObject.tag == "WallJump")
+    {
+      anim.SetBool("isSliding", false);
     }
   }
 
@@ -191,7 +197,6 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("isSliding", false);
       }
     }
-
 
     //moving platform makes the player "stick" to it and keep the transformations
     if (hit.gameObject.tag == "MovingPlatform" && controller.isGrounded)
