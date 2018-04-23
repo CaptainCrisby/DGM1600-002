@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 71b5c9120d210614894f2f364663e0db
+timeCreated: 1524450722
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube_21
+    100004: Cube_22
+    100006: Cube_23
+    100008: Cube_24
+    100010: Cube_4
+    100012: Cube_9_3
+    100014: Cube_9_4
+    100016: Cube_9_5
+    100018: Cube_9_6
+    100020: Cube_9_7
+    100022: Sphere
+    100024: Sphere_1
+    100026: Tube
+    100028: Tube_1
+    100030: Tube_2
+    100032: Tube_3
+    100034: Tube_4
+    100036: Tube_5
+    100038: Tube_6
+    100040: Tube_7
+    400000: //RootNode
+    400002: Cube_21
+    400004: Cube_22
+    400006: Cube_23
+    400008: Cube_24
+    400010: Cube_4
+    400012: Cube_9_3
+    400014: Cube_9_4
+    400016: Cube_9_5
+    400018: Cube_9_6
+    400020: Cube_9_7
+    400022: Sphere
+    400024: Sphere_1
+    400026: Tube
+    400028: Tube_1
+    400030: Tube_2
+    400032: Tube_3
+    400034: Tube_4
+    400036: Tube_5
+    400038: Tube_6
+    400040: Tube_7
+    2300000: Cube_21
+    2300002: Cube_22
+    2300004: Cube_23
+    2300006: Cube_24
+    2300008: Cube_4
+    2300010: Cube_9_3
+    2300012: Cube_9_4
+    2300014: Cube_9_5
+    2300016: Cube_9_6
+    2300018: Cube_9_7
+    2300020: Sphere
+    2300022: Sphere_1
+    2300024: Tube
+    2300026: Tube_1
+    2300028: Tube_2
+    2300030: Tube_3
+    2300032: Tube_4
+    2300034: Tube_5
+    2300036: Tube_6
+    2300038: Tube_7
+    3300000: Cube_21
+    3300002: Cube_22
+    3300004: Cube_23
+    3300006: Cube_24
+    3300008: Cube_4
+    3300010: Cube_9_3
+    3300012: Cube_9_4
+    3300014: Cube_9_5
+    3300016: Cube_9_6
+    3300018: Cube_9_7
+    3300020: Sphere
+    3300022: Sphere_1
+    3300024: Tube
+    3300026: Tube_1
+    3300028: Tube_2
+    3300030: Tube_3
+    3300032: Tube_4
+    3300034: Tube_5
+    3300036: Tube_6
+    3300038: Tube_7
+    4300000: Cube_4
+    4300002: Tube_7
+    4300004: Tube_6
+    4300006: Tube_5
+    4300008: Tube_4
+    4300010: Tube_3
+    4300012: Tube_2
+    4300014: Tube_1
+    4300016: Tube
+    4300018: Sphere
+    4300020: Sphere_1
+    4300022: Cube_24
+    4300024: Cube_23
+    4300026: Cube_22
+    4300028: Cube_21
+    4300030: Cube_9_3
+    4300032: Cube_9_4
+    4300034: Cube_9_5
+    4300036: Cube_9_6
+    4300038: Cube_9_7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

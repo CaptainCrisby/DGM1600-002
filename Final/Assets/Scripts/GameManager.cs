@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
   //Updates health using a switch statement
   private void Update()
   {
+
     //Set current health to be the same as the Health Manager's, locates the Image UI renderer
     currentHealth = GetComponent<HealthManager>().currentHealth;
 

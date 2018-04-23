@@ -15,13 +15,11 @@ public class DisableVisibility : MonoBehaviour {
       if (gameManager.GetComponent<SkinnedMeshRenderer>() != null)
       {
         GetComponent<SkinnedMeshRenderer>().enabled = false;
-        Debug.Log("changin");
       }
 
       if (gameManager.GetComponent<MeshRenderer>() != null)
       {
         GetComponent<MeshRenderer>().enabled = false;
-        Debug.Log("changin");
       }
 
     }
