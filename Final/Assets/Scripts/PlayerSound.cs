@@ -8,6 +8,7 @@ public class PlayerSound : MonoBehaviour {
   public AudioClip dab;
   public AudioClip flip;
   public AudioClip land;
+  public AudioClip jump;
   public AudioSource source;
 
   private bool hasDabbed;
@@ -42,6 +43,12 @@ public class PlayerSound : MonoBehaviour {
   {
     source.pitch = Random.Range(lowPitchRange, highPitchRange);
     source.PlayOneShot(land);
+  }
+
+  void Jump()
+  {
+    source.pitch = Random.Range(lowPitchRange, highPitchRange);
+    source.PlayOneShot(jump);
   }
 
   private void Update()

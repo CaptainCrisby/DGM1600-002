@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour {
   //TESTING WALL JUMP*********************************
   private void OnControllerColliderHit(ControllerColliderHit hit)
   {
-    if (!controller.isGrounded && hit.normal.y < 0.1f && hit.gameObject.tag == "WallJump")
+    if (!controller.isGrounded && hit.normal.y < 0.1f)
     {
       anim.SetBool("isSliding", true);
       anim.SetBool("isWallJumping", false);
