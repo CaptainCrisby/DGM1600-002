@@ -36,7 +36,11 @@ public class DialogueManager : MonoBehaviour {
     source = GetComponent<AudioSource>();   /////////////////////////////
 
     //Get your name
-    yourName = GameObject.Find("NameManager").GetComponent<PlayerName>().playerName;
+    if (yourName != null)
+    {
+      yourName = GameObject.Find("NameManager").GetComponent<PlayerName>().playerName;
+    }
+
   }
 
 

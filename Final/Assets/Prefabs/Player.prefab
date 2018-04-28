@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4879957427722712}
   - component: {fileID: 137211517260128334}
-  - component: {fileID: 114784364005982254}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: Untagged
@@ -119,7 +118,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4839839760698874}
   - component: {fileID: 137527348058175530}
-  - component: {fileID: 114488132312478670}
   m_Layer: 0
   m_Name: Eyebrow_R
   m_TagString: Untagged
@@ -136,7 +134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4232044211390346}
   - component: {fileID: 137955088118333652}
-  - component: {fileID: 114849072964072714}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -169,7 +166,6 @@ GameObject:
   - component: {fileID: 4766996786078716}
   - component: {fileID: 33222291753498772}
   - component: {fileID: 23251059775503692}
-  - component: {fileID: 114212597384638466}
   m_Layer: 0
   m_Name: eyereal_1
   m_TagString: Untagged
@@ -390,7 +386,6 @@ GameObject:
   - component: {fileID: 33633726909101570}
   - component: {fileID: 64422938461124312}
   - component: {fileID: 23903718204875420}
-  - component: {fileID: 114730342537436248}
   m_Layer: 0
   m_Name: BlushL
   m_TagString: Untagged
@@ -437,7 +432,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4072469605436518}
   - component: {fileID: 137879920519861900}
-  - component: {fileID: 114898102300446860}
   m_Layer: 0
   m_Name: Eyebrow_L
   m_TagString: Untagged
@@ -470,7 +464,7 @@ GameObject:
   - component: {fileID: 4846203997637080}
   - component: {fileID: 137001714700216516}
   m_Layer: 0
-  m_Name: jibunnoibasyo_jibunnoibasyo_jibunnoibasyo0_png
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +480,6 @@ GameObject:
   - component: {fileID: 4348841297702506}
   - component: {fileID: 33295308969359462}
   - component: {fileID: 23089865512270552}
-  - component: {fileID: 114994935348113158}
   m_Layer: 0
   m_Name: eyereal
   m_TagString: Untagged
@@ -575,7 +568,6 @@ GameObject:
   - component: {fileID: 33668160765380252}
   - component: {fileID: 64810166933876388}
   - component: {fileID: 23663288414244394}
-  - component: {fileID: 114927761592216294}
   m_Layer: 0
   m_Name: BlushR
   m_TagString: Untagged
@@ -1804,18 +1796,6 @@ MonoBehaviour:
   ySpeed: 45
   yMinLimit: -25
   yMaxLimit: 65
---- !u!114 &114212597384638466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146236521044320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!114 &114271112848266064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1845,18 +1825,6 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: d6a9df8f3ec2ca04391a728b8246e4bd, type: 3}
   jump: {fileID: 8300000, guid: 1b681077bf23d1f409ae4c7f5cfde2e3, type: 3}
   source: {fileID: 82720634617179030}
---- !u!114 &114488132312478670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099585351189066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!114 &114547292633584916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1900,18 +1868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinkEyeRate: 3
---- !u!114 &114730342537436248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593332543377696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!114 &114748946111307048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1939,66 +1895,6 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &114784364005982254
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1063684054173952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
---- !u!114 &114849072964072714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1113358798521554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
---- !u!114 &114898102300446860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1705842494115772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
---- !u!114 &114927761592216294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1881958156114426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
---- !u!114 &114994935348113158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733509026064056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e7aef275da2124eb46b1fa2a37ea9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!124 &124293259965416266
 Behaviour:
   m_ObjectHideFlags: 1

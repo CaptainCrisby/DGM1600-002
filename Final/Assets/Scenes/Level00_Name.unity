@@ -185,7 +185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1847624744}
+      - m_Target: {fileID: 1700462294}
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
@@ -1194,6 +1194,12 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2.07, y: -3.23}
   m_UseGraphicAlpha: 1
+--- !u!114 &1700462294 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114627612204700654, guid: 525e35aa2ec6cc14eb484162c2927174,
+    type: 2}
+  m_PrefabInternal: {fileID: 1847624743}
+  m_Script: {fileID: 11500000, guid: 4099e9a0ae130eb4bb754ba189bcb69e, type: 3}
 --- !u!1001 &1847624743
 Prefab:
   m_ObjectHideFlags: 0
@@ -1236,14 +1242,10 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 114591502486389766, guid: 525e35aa2ec6cc14eb484162c2927174, type: 2}
     - {fileID: 114448568455895496, guid: 525e35aa2ec6cc14eb484162c2927174, type: 2}
+    - {fileID: 114033320503646246, guid: 525e35aa2ec6cc14eb484162c2927174, type: 2}
+    - {fileID: 114785503122996920, guid: 525e35aa2ec6cc14eb484162c2927174, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 525e35aa2ec6cc14eb484162c2927174, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1847624744 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114386709959942206, guid: 525e35aa2ec6cc14eb484162c2927174,
-    type: 2}
-  m_PrefabInternal: {fileID: 1847624743}
-  m_Script: {fileID: 11500000, guid: 4099e9a0ae130eb4bb754ba189bcb69e, type: 3}
 --- !u!1 &1939881857
 GameObject:
   m_ObjectHideFlags: 0
