@@ -243,14 +243,9 @@ MonoBehaviour:
   dialogue:
     name: ???
     sentences:
-    - "\u3042\u3042\uFF01 \u3088\u3046\u3053\u305D\uFF01"
-    - "\u304A\u5143\u6C17\u3067\u3059\u304B\uFF1F\r"
-    - '...'
-    - "\u805E\u3044\u3066\u308B?"
-    - "\u30AF\u30B9\u30AF\u30B9... heheheh..."
-    - 'I''m only kidding! '
-    - Welcome!
-    - I hope you enjoy this game!
+    - Hello!
+    - Welcome to my video game.
+    - I hope you will enjoy the whole one level to its fullest.
     - Before we send you off, what is your name?
 --- !u!114 &327719529
 MonoBehaviour:
@@ -626,6 +621,7 @@ MonoBehaviour:
   nameText: {fileID: 1707671646}
   dialogueText: {fileID: 467157608}
   animator: {fileID: 1533127821}
+  yourName: 
   talk: {fileID: 8300000, guid: 08a2c3a8ef2688e4287a28fcf72ed8d0, type: 3}
 --- !u!4 &1317017960
 Transform:
@@ -707,7 +703,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1281,7 +1277,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 286154080
+  randomSeed: -282818899
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4615,7 +4611,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:

@@ -94,9 +94,15 @@ public class DialogueManager : MonoBehaviour {
   void EndDialogue()
   {
     animator.SetBool("IsOpen", false);
+
     if (sceneName == "Level00")
     {
       SceneManager.LoadScene("Level00_Name");
+    }
+
+    if (sceneName == "Level00_NameCheck")
+    {
+      SceneManager.LoadScene("Level02");
     }
   }
 }

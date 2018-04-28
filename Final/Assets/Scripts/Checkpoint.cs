@@ -17,12 +17,6 @@ public class Checkpoint : MonoBehaviour
   {
     theHealthMan = FindObjectOfType<HealthManager>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-  {
-		
-	}
 
   public void CheckpointOn()
   {
