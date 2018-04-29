@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Final.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Radio.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DialogueManager.cs">
     <Files>
       <File FileName="Assets\Scripts\Radio.cs" Line="63" Column="1" />
+      <File FileName="Assets\Scripts\DialogueManager.cs" Line="41" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
