@@ -12065,11 +12065,6 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 491870177}
-    - target: {fileID: 20620342839982784, guid: 7af425c8a9e90b346b10e324f45b1ea1,
-        type: 2}
-      propertyPath: far clip plane
-      value: 2000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7af425c8a9e90b346b10e324f45b1ea1, type: 2}
   m_IsPrefabParent: 0
