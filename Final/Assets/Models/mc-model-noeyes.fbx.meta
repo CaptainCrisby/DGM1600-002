@@ -36,6 +36,7 @@ ModelImporter:
     100056: mixamorig_Spine2
     100058: Mouth
     100060: Sphere
+    100062: Body
     400000: Eyebrow_L
     400002: Eyebrow_R
     400004: jibunnoibasyo_jibunnoibasyo_jibunnoibasyo0_png
@@ -67,17 +68,20 @@ ModelImporter:
     400056: mixamorig_Spine2
     400058: Mouth
     400060: Sphere
+    400062: Body
     4300000: jibunnoibasyo_jibunnoibasyo_jibunnoibasyo0_png
     4300002: Sphere
     4300004: Mouth
     4300006: Eyebrow_R
     4300008: Eyebrow_L
+    4300010: Body
     9500000: //RootNode
     13700000: Eyebrow_L
     13700002: Eyebrow_R
     13700004: jibunnoibasyo_jibunnoibasyo_jibunnoibasyo0_png
     13700006: Mouth
     13700008: Sphere
+    13700010: Body
   materials:
     importMaterials: 1
     materialName: 0
