@@ -4648,7 +4648,7 @@ MonoBehaviour:
   animation: {fileID: 0}
   anim: {fileID: 365648852}
   music:
-  - {fileID: 8300000, guid: c16bd2ef014a91247a83b2eeadb0be14, type: 3}
+  - {fileID: 0}
   bang: {fileID: 8300000, guid: 9afe05b074186c74883168ade18f8547, type: 3}
   source: {fileID: 365648855}
   alreadyDabbed: 0
@@ -10330,6 +10330,7 @@ MonoBehaviour:
   dab: {fileID: 8300000, guid: 18af815eebac61440bb83e5c2c22e1ce, type: 3}
   flip: {fileID: 8300000, guid: ec8464ac07e7fa441a4667578e8e92c4, type: 3}
   land: {fileID: 8300000, guid: c746910b02eeacc4998889de3e523a3a, type: 3}
+  jump: {fileID: 0}
   source: {fileID: 1804429931}
 --- !u!4 &1804429929 stripped
 Transform:
