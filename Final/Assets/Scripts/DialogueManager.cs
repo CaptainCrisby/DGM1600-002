@@ -35,11 +35,7 @@ public class DialogueManager : MonoBehaviour {
     sentences = new Queue<string>();
     source = GetComponent<AudioSource>();   /////////////////////////////
 
-    //Get your name
-    if (yourName != null)
-    {
-      yourName = GameObject.Find("NameManager").GetComponent<PlayerName>().playerName;
-    }
+    yourName = GameObject.Find("NameManager").GetComponent<PlayerName>().playerName;
 
   }
 
@@ -77,6 +73,12 @@ public class DialogueManager : MonoBehaviour {
 
   IEnumerator TypeSentence (string sentence)
   {
+
+    //If they didn't put in any value, just replace it with Payton (unisex name)
+    if (yourName == "")
+    {
+      yourName = "Payton";
+    }
 
     //check if I wrote the phrase "Playername" and replace it with the real name
     if (sentence.Contains("playerName"))

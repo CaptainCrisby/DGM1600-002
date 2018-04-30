@@ -264,11 +264,13 @@ MonoBehaviour:
     - playerName
     - '...'
     - That's your name?
-    - Well, playerName, if I had to be quite honest with you...
-    - I just completely wasted your time.
-    - I just kinda wanted you to do that because I need the points
-    - Please!!! Give me points for this!
-    - Tata for now! We'll see each other again soon!
+    - Hahahahahahaha.
+    - 'Sorry... '
+    - it seems my memory isn't what it used to be.
+    - I've already forgotten your name.
+    - I'd have you do it again,
+    - But I know you just want to play the game.
+    - Tata for now! See you again never!
 --- !u!114 &327719529
 MonoBehaviour:
   m_ObjectHideFlags: 0

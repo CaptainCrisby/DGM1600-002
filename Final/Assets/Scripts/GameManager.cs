@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour {
   //quittin' games
   public void QuitGame()
   {
-    Debug.Log("Quitting");
     Application.Quit();
   }
 
