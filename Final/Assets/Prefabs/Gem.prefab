@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 82796103213797040}
   m_Layer: 0
   m_Name: Gem
-  m_TagString: Untagged
+  m_TagString: NoCollide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,9 +53,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223853966394908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.78, y: 1.0886009, z: 5.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26.507212, y: -0.018208994, z: 3.229509}
+  m_LocalScale: {x: 0.13006482, y: 0.1300648, z: 0.1300648}
   m_Children:
   - {fileID: 4956311288643636}
   m_Father: {fileID: 0}

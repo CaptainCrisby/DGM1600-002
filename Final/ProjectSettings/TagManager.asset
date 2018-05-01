@@ -7,6 +7,7 @@ TagManager:
   - Radio
   - MovingPlatform
   - WallJump
+  - NoCollide
   layers:
   - Default
   - TransparentFX

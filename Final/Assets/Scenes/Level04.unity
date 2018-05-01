@@ -2398,6 +2398,10 @@ Prefab:
       propertyPath: m_Name
       value: Checkpoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
   m_IsPrefabParent: 0
@@ -2532,6 +2536,10 @@ Prefab:
     - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
       propertyPath: m_Name
       value: Checkpoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
@@ -4207,6 +4215,10 @@ Prefab:
     - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
       propertyPath: m_Name
       value: Checkpoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
@@ -9760,18 +9772,6 @@ Prefab:
       propertyPath: source
       value: 
       objectReference: {fileID: 307073504}
-    - target: {fileID: 4409237208748184, guid: a4273aca2436a9745baa35d582d4644a, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.13006482
-      objectReference: {fileID: 0}
-    - target: {fileID: 4409237208748184, guid: a4273aca2436a9745baa35d582d4644a, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.1300648
-      objectReference: {fileID: 0}
-    - target: {fileID: 4409237208748184, guid: a4273aca2436a9745baa35d582d4644a, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.1300648
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4273aca2436a9745baa35d582d4644a, type: 2}
   m_IsPrefabParent: 0
@@ -10746,6 +10746,10 @@ Prefab:
     - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
       propertyPath: m_Name
       value: Checkpoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
@@ -12571,6 +12575,10 @@ Prefab:
       propertyPath: m_Name
       value: Checkpoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
   m_IsPrefabParent: 0
@@ -13263,6 +13271,10 @@ Prefab:
     - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
       propertyPath: m_Name
       value: Checkpoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399785708337400, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
+      propertyPath: m_TagString
+      value: NoCollide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df8e0512319e07247b218e78aebb82e6, type: 2}
