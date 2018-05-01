@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 bottom = controller.transform.position - new Vector3(0, controller.height / 2, 0);
 
     RaycastHit hit;
-    if (Physics.Raycast(bottom, new Vector3(0, -1, 0), out hit, .3f))
+    if (Physics.Raycast(bottom, new Vector3(0, -1, 0), out hit, .3f) && hit.transform.tag != "NoCollide")
     {
       controller.Move(new Vector3(0, -hit.distance, 0));
       return true;
