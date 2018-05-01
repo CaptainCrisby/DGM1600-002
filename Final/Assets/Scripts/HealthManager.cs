@@ -120,8 +120,6 @@ public class HealthManager : MonoBehaviour {
 
   public void Respawn()
   {
-    //thePlayer.transform.position = respawnPoint;
-    //currentHealth = maxHealth;
     if (!isRespawning)
     {
       StartCoroutine("RespawnCo");
@@ -162,6 +160,22 @@ public class HealthManager : MonoBehaviour {
     {
       currentHealth = maxHealth;
     }
+
+    //animate the UI
+    GameObject.Find("HealthUI").GetComponent<Animator>().SetBool("healthChange", true);
+
+    //UI transition stuff
+    if (GameObject.Find("HealthUI").GetComponent<Animator>().GetBool("healthChange") == true)
+    {
+      StopCoroutine("ExitTime");
+      StartCoroutine("ExitTime");
+    }
+    else if (GameObject.Find("HealthUI").GetComponent<Animator>().GetBool("healthChange") == false)
+    {
+      StartCoroutine("ExitTime");
+    }
+
+
   }
 
   public void SetSpawnPoint(Vector3 newPosition)

@@ -109,3 +109,5 @@ MonoBehaviour:
   rend: {fileID: 23122100014933944}
   cpOff: {fileID: 2100000, guid: e236bf9b6cc9e004d9b5780c984d4b11, type: 2}
   cpOn: {fileID: 2100000, guid: 8bb221a9ac168774589f0e9ebf73c66b, type: 2}
+  audioSource: {fileID: 0}
+  checkpointSound: {fileID: 8300000, guid: 7f31eb9465e2e184a9445c9897500437, type: 3}

@@ -12,6 +12,9 @@ public class Checkpoint : MonoBehaviour
   public Material cpOff;
   public Material cpOn;
 
+  public AudioSource audioSource;
+  public AudioClip checkpointSound;
+
 	// Use this for initialization
 	void Start ()
   {
@@ -38,6 +41,7 @@ public class Checkpoint : MonoBehaviour
   {
     if (other.tag.Equals("Player"))
     {
+      audioSource.PlayOneShot(checkpointSound);
       theHealthMan.SetSpawnPoint(transform.position);
       CheckpointOn();
     }
