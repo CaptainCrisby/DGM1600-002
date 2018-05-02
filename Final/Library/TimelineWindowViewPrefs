@@ -11,5 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 12941, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Keys: []
-  m_Vals: []
+  m_Keys:
+  - {fileID: 11400000, guid: d00c2290d7fb8df44b78a6533d0daf93, type: 2}
+  m_Vals:
+  - timeInFrames: 1
+    timeAreaShownRange: {x: -0.24849124, y: 14.1640005}
+    m_Keys:
+    - {fileID: 114285889708492016, guid: d00c2290d7fb8df44b78a6533d0daf93, type: 2}
+    - {fileID: 114277231331906936, guid: d00c2290d7fb8df44b78a6533d0daf93, type: 2}
+    m_Vals:
+    - collapsed: 0
+      showInlineCurves: 0
+    - collapsed: 0
+      showInlineCurves: 0

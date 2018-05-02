@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: oldguy_intro
   m_EditorClassIdentifier: 
   m_Id: 0
-  m_NextId: 10
+  m_NextId: 11
   m_Tracks:
   - {fileID: 114285889708492016}
   - {fileID: 114150479804803360}
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Position: {x: 0, y: 0, z: 0}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &114171928916271496
+--- !u!114 &114180867841659318
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: -1977359656, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: ab81a630f6d805b42a8ec13231018524, type: 3}
+  m_Clip: {fileID: 8300000, guid: 5caa6a89e1ad0d5469127df60dca48a8, type: 3}
   m_Loop: 0
   m_bufferingTime: 0.1
 --- !u!114 &114235254299852370
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_Clips:
   - m_Start: 4
     m_ClipIn: 0
-    m_Asset: {fileID: 114171928916271496}
-    m_UnderlyingAsset: {fileID: 8300000, guid: ab81a630f6d805b42a8ec13231018524, type: 3}
-    m_Duration: 3.283333333333333
+    m_Asset: {fileID: 114180867841659318}
+    m_UnderlyingAsset: {fileID: 8300000, guid: 5caa6a89e1ad0d5469127df60dca48a8, type: 3}
+    m_Duration: 1.149375
     m_ParentID: 0
     m_TimeScale: 1
     m_BlendCurve:
@@ -602,13 +602,13 @@ MonoBehaviour:
     m_BlendOutCurveMode: 0
     m_ExposedParameterNames: []
     m_AnimationCurves: {fileID: 0}
-    m_ID: 1646738609
+    m_ID: -1639906273
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Arena-Lights-Sound-Effect-3
+    m_DisplayName: lighton
 --- !u!114 &114285889708492016
 MonoBehaviour:
   m_ObjectHideFlags: 1
