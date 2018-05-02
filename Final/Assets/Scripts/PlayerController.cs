@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-  public new AudioSource audio;
   public AudioClip dab;
   private bool isDabbing;
 

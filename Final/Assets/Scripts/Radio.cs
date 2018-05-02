@@ -5,7 +5,6 @@ using UnityEngine;
 public class Radio : MonoBehaviour {
 
   public GameObject player;
-  public new Animation animation; //think about renaming this
   public Animator anim;
 
   public AudioClip[] music;
@@ -29,7 +28,6 @@ public class Radio : MonoBehaviour {
     if (other.gameObject.tag == "Player")
     {
       PlayOnce();
-      Debug.Log("You're in my space");
 
 
       if (alreadyDabbed == false)

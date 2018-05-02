@@ -17,9 +17,16 @@ public class LoadLevel : MonoBehaviour
   {
     if (other.gameObject.tag == "Player")
     {
-      Level(level);
+      StartCoroutine(ChangeLevel());
     }
+  }
 
+  IEnumerator ChangeLevel()
+  {
+    //fade out and load next level
+    float fadeTime = GameObject.Find("Fading").GetComponent<Fading>().BeginFade(1);
+    yield return new WaitForSeconds(fadeTime);
+    Level(level);
   }
 
 }

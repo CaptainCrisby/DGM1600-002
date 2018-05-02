@@ -29,7 +29,6 @@ public class GemPickup : MonoBehaviour {
     {
       source.pitch = Random.Range(lowPitchRange, highPitchRange);
       source.PlayOneShot(gemSound);
-      Debug.Log("played the sound");
 
       FindObjectOfType<GameManager>().AddGem(value);
 
