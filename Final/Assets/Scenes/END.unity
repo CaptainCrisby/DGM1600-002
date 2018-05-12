@@ -789,8 +789,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "GOOD JOB YOU WIN!\n\nEverything in this game was made from scratch specifically
-    for this project\n\nTOOLS: \nPsx_retroshader, Mixamo Rigger, Pixatool\n\nOriginal
+  m_Text: "GOOD JOB YOU WIN!\n\nAlmost everything in this game was made from scratch
+    specifically for this project.\n\nTOOLS: \nPsx_retroshader, Mixamo Rigger, Pixatool\n\nOriginal
     Soundtrack: \nComposed by Shane Mesa and gusdabeast\n\nSFX, Animation, Textures,
     Level Design, Programming: \nChristopher Brough"
 --- !u!222 &2118953189
