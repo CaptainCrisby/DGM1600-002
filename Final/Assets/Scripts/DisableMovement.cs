@@ -20,4 +20,8 @@ public class DisableMovement : MonoBehaviour {
       GetComponent<CharacterController>().enabled = true;
     }
 	}
+
+
+
+
 }

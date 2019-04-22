@@ -10,9 +10,14 @@ public class CameraSwitch : MonoBehaviour {
 
   public GameObject player;
   public GameObject playerModel;
-	
-	// Update is called once per frame
-	void Update () {
+
+  public GameObject playereyes;
+  public GameObject playerbrowl;
+  public GameObject playerbrowr;
+  public GameObject playermouth;
+
+  // Update is called once per frame
+  void Update () {
     if (player.GetComponent<CharacterController>().isGrounded == true && playerModel.GetComponent<Animator>().GetFloat("Speed") == 0)
     {
       if (Input.GetButtonDown("Camera"))
@@ -39,12 +44,22 @@ public class CameraSwitch : MonoBehaviour {
     {
       thirdPerson.SetActive(true);
       firstPerson.SetActive(false);
+
+      playereyes.SetActive(true);
+      playerbrowl.SetActive(true);
+      playerbrowr.SetActive(true);
+      playermouth.SetActive(true);
     }
 
     if(cameraMode == 1)
     {
       thirdPerson.SetActive(false);
       firstPerson.SetActive(true);
+
+      playereyes.SetActive(false);
+      playerbrowl.SetActive(false);
+      playerbrowr.SetActive(false);
+      playermouth.SetActive(false);
     }
   }
 

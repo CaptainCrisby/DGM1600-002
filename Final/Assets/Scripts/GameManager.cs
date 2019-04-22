@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
   public int currentGem;
   public Text gemText;
@@ -17,43 +18,22 @@ public class GameManager : MonoBehaviour {
   //For getting SceneName and checking
   private string sceneName;
   private Scene currentScene;
-  public enum States { unknown, arcade, city};
+  public enum States { unknown, arcade, city, cityy };
   private States currentState;
   public Text titleObject;
 
+  private bool loaded = false;
+
+  private GameObject m_player;
+
+  public static List<GameObject> chosedInventory;
+
+  [SerializeField] private GameObject sceneObject;
+  [SerializeField] private GameObject pauseMenuObject;
   // Use this for initialization
   void Start()
   {
-    //this nabs the current scene's name
-    currentScene = SceneManager.GetActiveScene();
-    sceneName = currentScene.name;
-
-    //Tells game what state to be in based on scene names
-    if (sceneName == "Level00" || sceneName == "Level00_NameCheck" || sceneName == "Level00_Name")
-    {
-      currentState = States.unknown;
-    }
-    else if (sceneName == "Level02")
-    {
-      currentState = States.arcade;
-    }
-    else if (sceneName == "Level04")
-    {
-      currentState = States.city;
-    }
-
-    //Checking states of the enum
-    if (currentState == States.unknown)
-    {
-      titleObject.text = "???";
-    } else if (currentState == States.arcade)
-    {
-      titleObject.text = "Arcade";
-    } else if (currentState == States.city)
-    {
-      titleObject.text = "City Roofs";
-    }
-
+    GameObject.FindGameObjectWithTag("Player").transform.parent = sceneObject.transform;
   }
 
   //loadin' levels
@@ -79,7 +59,8 @@ public class GameManager : MonoBehaviour {
     {
       StopCoroutine("ExitTime");
       StartCoroutine("ExitTime");
-    } else if (GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain") == false)
+    }
+    else if (GameObject.Find("GemUI").GetComponent<Animator>().GetBool("gemObtain") == false)
     {
       StartCoroutine("ExitTime");
     }
@@ -97,7 +78,28 @@ public class GameManager : MonoBehaviour {
   //Updates health using a switch statement
   private void Update()
   {
+    //PAUSE MENU STUFF
+    if (SceneManager.GetActiveScene().name != "_Menu")
+    {
+      if (Input.GetKey(KeyCode.P) && !loaded)
+      {
+        loaded = true;
 
+        sceneObject.SetActive(false);
+        m_player = GameObject.FindGameObjectWithTag("Player");
+        m_player.SetActive(false);
+        pauseMenuObject.SetActive(true);
+
+      }
+      if (Input.GetKey(KeyCode.Q) && loaded)
+      {
+        loaded = false;
+        pauseMenuObject.SetActive(false);
+        sceneObject.SetActive(true);
+        m_player.SetActive(true);
+
+      }
+    }
     //Set current health to be the same as the Health Manager's, locates the Image UI renderer
     if (img != null)
     {
@@ -139,6 +141,12 @@ public class GameManager : MonoBehaviour {
       }
     }
   }
+
+  public static void updatePlayer()
+  {
+
+  }
+
 
 
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class PlayerController : MonoBehaviour {
 
   public AudioClip dab;
   private bool isDabbing;
+  private bool isWalking;
 
   public float moveSpeed;
+  float trueWalkSpeed = 5;
   float walkSpeed = 10;
-  float runSpeed = 15;
+  //float runSpeed = 15;
 
   public float jumpForce;
   float minJumpForce = 10;
@@ -31,14 +34,25 @@ public class PlayerController : MonoBehaviour {
   public Transform shadow;
   public LayerMask ignoreLayer;
 
+  public bool canMove = true;
+
   // Use this for initialization
   void Start () {
     controller = GetComponent<CharacterController>();
-    isDabbing = false;
+    //isDabbing = false;
+    isWalking = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+    //stop player movement when dialogue happens
+    if (!canMove)
+    {
+      anim.SetFloat("Speed", 0);
+      //isDabbing = false;
+      return;
+    }
 
     //de-parents the player from a moving object
     if (!controller.isGrounded)
@@ -59,8 +73,8 @@ public class PlayerController : MonoBehaviour {
       //if the player is grounded, jump. Also sets the jumpforce.
       if (IsGrounded())
       {
-        moveDirection.y = 0f;
 
+        moveDirection.y = 0f;
         if (Input.GetButtonDown("Jump"))
         {
           moveDirection.y = jumpForce;
@@ -96,7 +110,7 @@ public class PlayerController : MonoBehaviour {
     anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
 
     //Dabbing
-    if (Input.GetButtonDown("Fire1"))
+    /*if (Input.GetButtonDown("Fire1"))
     {
       anim.SetBool("isDabbing", true);
       isDabbing = true;
@@ -113,13 +127,33 @@ public class PlayerController : MonoBehaviour {
     } else if (isDabbing == false)
     {
       moveSpeed = walkSpeed;
-    }
+    } */
 
     UpdateShadow();
 
+    //Walking
+    if (Input.GetButtonDown("Fire3"))
+    {
+      anim.SetBool("isWalking", true);
+      isWalking = true;
+    } else if (Input.GetButtonUp("Fire3"))
+    {
+      anim.SetBool("isWalking", false);
+      isWalking = false;
+    }
+
+    //Walking Speed
+    if (isWalking)
+    {
+      moveSpeed = trueWalkSpeed;
+    } else if (!isWalking)
+    {
+      moveSpeed = walkSpeed;
+    }
+
   }
 
-  //Updates the player's shadow based on their shadow
+  //Updates the player's shadow based on their position
   private void UpdateShadow()
   {
     RaycastHit hit;
@@ -134,6 +168,11 @@ public class PlayerController : MonoBehaviour {
     {
       anim.SetBool("isNearRadio", true);
     }
+
+    if(other.gameObject.tag == "Seat")
+    {
+      anim.SetBool("isNearSeat", true);
+    }
   }
   //sets the radio dance idle to false
   private void OnTriggerExit(Collider other)
@@ -141,6 +180,11 @@ public class PlayerController : MonoBehaviour {
     if (other.gameObject.tag == "Radio")
     {
       anim.SetBool("isNearRadio", false);
+    }
+
+    if (other.gameObject.tag == "Seat")
+    {
+      anim.SetBool("isNearSeat", false);
     }
 
     if (other.gameObject.tag == "WallJump")
@@ -178,7 +222,7 @@ public class PlayerController : MonoBehaviour {
   //Wall jumping
   private void OnControllerColliderHit(ControllerColliderHit hit)
   {
-    if (!controller.isGrounded && hit.normal.y < 0.1f && hit.normal.y > -0.1f)
+    if (!controller.isGrounded && hit.normal.y < 0.1f && hit.normal.y > -0.1f && hit.gameObject.tag == "WallJump") //This last part makes it so that walls tagged as only walljump work
     {
       anim.SetBool("isSliding", true);
       anim.SetBool("isWallJumping", false);
@@ -209,5 +253,4 @@ public class PlayerController : MonoBehaviour {
     }
 
   }
-
 }

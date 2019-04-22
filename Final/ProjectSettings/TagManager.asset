@@ -8,6 +8,8 @@ TagManager:
   - MovingPlatform
   - WallJump
   - NoCollide
+  - Car
+  - Seat
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - PauseMenuLayer
+  - uNature_Terrain
   - 
   - 
   - 

@@ -31,7 +31,6 @@ public class CameraController : MonoBehaviour {
     }
 
     Cursor.lockState = CursorLockMode.Locked;
-
   }
 
   private void LateUpdate()
@@ -60,6 +59,7 @@ public class CameraController : MonoBehaviour {
       {
         pivot.rotation = Quaternion.Euler(360f + minViewAngle, desiredYAngle, 0);
       }
+
     }
   }
 

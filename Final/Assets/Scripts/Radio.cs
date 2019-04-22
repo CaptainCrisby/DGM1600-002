@@ -17,7 +17,7 @@ public class Radio : MonoBehaviour {
   {
     source.clip = music[Random.Range(0, music.Length)];
     source.Play();
-    anim.SetBool("hit", false); //probably unnecessary, look more into it later.
+    anim.SetBool("hit", false);
     alreadyDabbed = false;
   }
 
